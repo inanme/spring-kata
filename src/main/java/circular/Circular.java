@@ -1,45 +1,22 @@
 package circular;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.DependsOn;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
-import java.time.Instant;
-
 @Component
-@Lazy
 class Host {
+    private final Symbiote symbiote;
 
-    final Instant instant = Instant.now();
-
-    private Symbiote symbiote;
-
-    @Autowired
-    public void setSymbiote(Symbiote symbiote) {
+    public Host(Symbiote symbiote) {
         this.symbiote = symbiote;
-    }
-
-    public Symbiote getSymbiote() {
-        return symbiote;
     }
 }
 
 @Component
-@Lazy
-@DependsOn("host")
 class Symbiote {
+    private final Host host;
 
-    final Instant instant = Instant.now();
 
-    private Host host;
-
-    @Autowired
-    public void setHost(Host host) {
+    public Symbiote(Host host) {
         this.host = host;
-    }
-
-    public Host getHost() {
-        return host;
     }
 }

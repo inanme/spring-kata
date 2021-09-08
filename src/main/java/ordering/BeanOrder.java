@@ -1,6 +1,5 @@
 package ordering;
 
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -11,7 +10,6 @@ interface Downstream {
 }
 
 @Component
-@Order(2)
 class Kafka implements Downstream {
     @Override
     public String getName() {
@@ -20,7 +18,6 @@ class Kafka implements Downstream {
 }
 
 @Component
-@Order(3)
 class Cassandra implements Downstream {
     @Override
     public String getName() {
@@ -30,7 +27,6 @@ class Cassandra implements Downstream {
 
 
 @Component
-@Order(1)
 class Keyserver implements Downstream {
     @Override
     public String getName() {

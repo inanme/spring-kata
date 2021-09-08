@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.5'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.sky'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
+    implementation "org.springframework.boot:spring-boot-starter-cache"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-devtools"
+    implementation "org.springframework.boot:spring-boot-starter-tomcat"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    implementation "com.h2database:h2:1.4.198"
+    implementation "ch.qos.logback:logback-classic"
+    implementation "org.slf4j:slf4j-api"
+    testImplementation "org.mockito:mockito-junit-jupiter"
+}
+
+test {
+    useJUnitPlatform()
+}

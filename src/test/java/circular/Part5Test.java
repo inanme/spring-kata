@@ -28,4 +28,10 @@ public class Part5Test {
         assertDoesNotThrow(() -> context.getBean(Host.class));
         assertNotNull(context.getBean(Host.class));
     }
+
+
+    @Test
+    void symbioteDependsOnHost(@Autowired Symbiote symbiote, @Autowired Host host) {
+        assertTrue(host.instant.isBefore(symbiote.instant));
+    }
 }

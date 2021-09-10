@@ -41,16 +41,13 @@ The Spring framework provides several implementations of the ApplicationContext 
 * @Component
 * @ComponentScan
 * @Configuration
-* @Controller
-* @EnableAutoConfiguration
-* @ExtendWith
 * @PostConstruct
 * @PreDestroy
 * @Primary
 * @Qualifier
 * @Repository
-* @RestController
 * @Scope
 * @Service
+* @Order
 
 

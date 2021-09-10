@@ -59,12 +59,12 @@ class BookmarkingServiceWithConstructorInjection implements BookmarkingService {
     }
 
     @PostConstruct
-    public void init(){
+    public void init() {
         connectionOpened.incrementAndGet();
     }
 
     @PreDestroy
-    public void destroy(){
+    public void destroy() {
         connectionClosed.incrementAndGet();
     }
 

@@ -1,12 +1,18 @@
 package circular;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+
+import java.time.Instant;
 
 @Component
 @Lazy
 class Host {
+
+    final Instant instant = Instant.now();
+
     private Symbiote symbiote;
 
     @Autowired
@@ -21,7 +27,11 @@ class Host {
 
 @Component
 @Lazy
+@DependsOn("host")
 class Symbiote {
+
+    final Instant instant = Instant.now();
+
     private Host host;
 
     @Autowired
